@@ -9,40 +9,66 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 2% 6%;
+            display: flex;
+            justify-content: center; /* Zentriert den Hauptinhalt horizontal */
+        }
+        main {
+            padding: 0% 4%;
         }
         header {
             text-align: center;
             padding: 2% 0;
         }
-                header h1 {
-                    font-size: 6vw; /* Dynamische Schriftgröße basierend auf Fensterbreite */
-                    margin: 0;
-                }
+        header h1 {
+            font-size: 6vw; /* Dynamische Schriftgröße basierend auf Fensterbreite */
+            margin: 0;
+        }
         .line {
             font-family: monospace;
             white-space: nowrap;
             overflow: hidden;
         }
         p {
-            padding: 0% 5%;
             text-align: left;
+            font-size: 4vw; /* Dynamische Schriftgröße */
+        }
+
+        @media (min-width: 800px) {
+        .container {
+            width: 100%;
+            max-width: 60%; /* 3/5 der Breite */
+            padding: 2%; /* Innenabstand */
+            box-sizing: border-box; /* Padding wird in die Breite eingerechnet */
+        }
+        }
+
+        /* Für größere Bildschirme */
+        @media (min-width: 800px) {
+            header h1 {
+                font-size: 3.5vw; /* Feste Schriftgröße */
+            }
+            p {
+                font-size: 1.8vw; /* Feste Schriftgröße */
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Kirche der letzten Tage IPv4</h1>
-        <div id="dynamic-line" class="line"></div>
-    </header>
-    <main>
-        <p>Noch können Sie gerettet werden und zu IPv6 wechseln, verbreiten Sie die frohe Kunde.</p>
-    </main>
+    <div class="container">
+        <header>
+            <h1>Kirche der letzten Tage IPv4</h1>
+            <div id="dynamic-line" class="line"></div>
+        </header>
+        <main>
+            <p>Noch können Sie gerettet werden und zu IPv6 wechseln, verbreiten Sie die frohe Kunde.</p>
+        </main>
+    </div>
     <script>
         function updateLine() {
             const lineElement = document.getElementById('dynamic-line');
-            const screenWidth = window.innerWidth;
-            const charWidth = 9; // Breite eines `+`-Zeichens, geschätzt in px
-            const numChars = Math.floor(screenWidth / charWidth);
+            const containerWidth = document.querySelector('.container').offsetWidth;
+            const charWidth = 8; // Breite eines `+`-Zeichens, geschätzt in px
+            const numChars = Math.floor(containerWidth / charWidth);
             lineElement.textContent = '+'.repeat(numChars);
         }
 
