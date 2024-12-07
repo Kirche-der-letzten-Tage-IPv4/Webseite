@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,49 +11,75 @@
             margin: 0;
             padding: 2% 6%;
             display: flex;
-            justify-content: center; /* Zentriert den Hauptinhalt horizontal */
+            justify-content: center;
+            /* Zentriert den Hauptinhalt horizontal */
         }
+
         main {
             padding: 0% 4%;
         }
+
         header {
             text-align: center;
             padding: 2% 0;
         }
+
         header h1 {
-            font-size: 6vw; /* Dynamische Schriftgröße basierend auf Fensterbreite */
+            font-size: 6vw;
+            /* Dynamische Schriftgröße basierend auf Fensterbreite */
             margin: 0;
         }
+
         .line {
             font-family: monospace;
             white-space: nowrap;
             overflow: hidden;
         }
-        p {
+
+        table {
             text-align: left;
-            font-size: 4vw; /* Dynamische Schriftgröße */
+            font-size: 4vw;
+            /* Dynamische Schriftgröße */
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            border: 1px solid black;
+            /* Grenze zwischen den Zellen */
+            padding: 8px;
+            /* optional, sorgt für Abstand innerhalb der Zellen */
         }
 
         @media (min-width: 800px) {
-        .container {
-            width: 100%;
-            max-width: 60%; /* 3/5 der Breite */
-            padding: 2%; /* Innenabstand */
-            box-sizing: border-box; /* Padding wird in die Breite eingerechnet */
-        }
+            .container {
+                width: 100%;
+                max-width: 60%;
+                /* 3/5 der Breite */
+                padding: 2%;
+                /* Innenabstand */
+                box-sizing: border-box;
+                /* Padding wird in die Breite eingerechnet */
+            }
         }
 
         /* Für größere Bildschirme */
         @media (min-width: 800px) {
             header h1 {
-                font-size: 3.5vw; /* Feste Schriftgröße */
+                font-size: 3.5vw;
+                /* Feste Schriftgröße */
             }
-            p {
-                font-size: 1.8vw; /* Feste Schriftgröße */
+
+            table {
+                font-size: 1.8vw;
+                /* Feste Schriftgröße */
+                border-collapse: collapse;
+                width: 100%;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -62,12 +89,34 @@
             <h1>Die 6 Gebote.</h1>
         </header>
         <main>
-            <p>1. Ich bin IPv6, dein Protokoll was dich aus IPv4 geführt hat, aus dem NAT.</p>
-            <p>2. Du sollst keinen Dual Stack mit mir führen.</p>
-            <p>3. Du sollst das Subnet heiligen.</p>
-            <p>4. Du sollst DNS und BGP ehren.</p>
-            <p>5. Du sollst nicht begehren deines Nachbarn Adressraum.</p>
-            <p>6. Dein Bildnis von mir mache mit der aktuellen RFC Spezifikation.</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>Ich bin IPv6, dein Protokoll was dich aus IPv4 geführt hat, aus dem NAT.</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Du sollst keinen Dual Stack mit mir führen.</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Du sollst das Subnet heiligen.</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Du sollst DNS und BGP ehren.</td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Du sollst nicht begehren deines Nachbarn Adressraum.</td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td>Dein Bildnis von mir mache mit der aktuellen RFC Spezifikation.</td>
+                    </tr>
+                </tbody>
+            </table>
         </main>
     </div>
     <script>
@@ -84,4 +133,5 @@
         window.addEventListener('resize', updateLine);
     </script>
 </body>
+
 </html>
